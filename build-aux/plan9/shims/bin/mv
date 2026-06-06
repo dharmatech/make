@@ -1,0 +1,10 @@
+#!/bin/rc
+rfork e
+args=()
+for(arg in $*){
+	if(~ $arg -f)
+		;
+	if not
+		args=($args $arg)
+}
+exec /bin/mv $args
