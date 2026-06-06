@@ -2636,7 +2636,7 @@ handle_function (char **op, const char **stringp)
   *stringp = end;
 
   /* Get some memory to store the arg pointers.  */
-  argvp = argv = alloca (sizeof (char *) * (nargs + 2));
+  argvp = argv = (char **) alloca (sizeof (char *) * (nargs + 2));
 
   /* Chop the string into arguments, then a nul.  As soon as we hit
      MAXIMUM_ARGS (if it's >0) assume the rest of the string is part of the

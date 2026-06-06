@@ -74,3 +74,16 @@ mkconfig.h
 make-[0-9]*/
 make-[0-9]*.tar.*
 checkcfg.*.log
+
+# added by dharmatech:
+
+# Plan 9 port backup files
+*.before-*
+
+# Release tarball/generated files not tracked by git
+/doc/fdl.texi
+/doc/make-stds.texi
+/doc/make.info*
+/doc/version.texi
+/po/
+/tests/config-flags.pm

@@ -171,6 +171,7 @@ compile $OBJS || die "Compilation failed."
 echo "linking make..."
 $CC $CFLAGS $LDFLAGS -L"$OUTLIB" -o "$OUTDIR/makenew$EXEEXT" $objs -lgnu $LOADLIBES || die "Link failed."
 
-mv -f "$OUTDIR/makenew$EXEEXT" "$OUTDIR/make$EXEEXT" || exit 1
+if test -f "$OUTDIR/make$EXEEXT"; then rm "$OUTDIR/make$EXEEXT" || exit 1; fi
+mv "$OUTDIR/makenew$EXEEXT" "$OUTDIR/make$EXEEXT" || exit 1
 
 echo done.

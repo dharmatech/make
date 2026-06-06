@@ -20,6 +20,8 @@ struct file;
 
 /* Codes in a variable definition saying where the definition came from.
    Increasing numeric values signify less-overridable definitions.  */
+#ifndef VARIABLE_ORIGIN_ENUM_DEFINED
+#define VARIABLE_ORIGIN_ENUM_DEFINED
 enum variable_origin
   {
     o_default,          /* Variable from the default set.  */
@@ -31,6 +33,7 @@ enum variable_origin
     o_automatic,        /* Automatic variable -- cannot be set.  */
     o_invalid           /* Core dump time.  */
   };
+#endif
 
 enum variable_flavor
   {

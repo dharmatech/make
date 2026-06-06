@@ -2642,7 +2642,7 @@ exec_command (char **argv, char **envp)
           ++argc;
 # endif
 
-        new_argv = alloca ((1 + argc + 1) * sizeof (char *));
+        new_argv = (char **) alloca ((1 + argc + 1) * sizeof (char *));
         new_argv[0] = (char *)shell;
 
 # ifdef __EMX__

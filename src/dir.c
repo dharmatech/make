@@ -1341,7 +1341,7 @@ int lstat (const char *path, struct stat *sbuf);
 #     undef lstat
 #   endif
 # endif
-# define local_lstat lstat
+# define local_lstat local_stat
 #elif defined(WINDOWS32)
 /* Windows doesn't support lstat().  */
 # define local_lstat local_stat

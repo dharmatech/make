@@ -266,7 +266,7 @@ ar_glob (const char *arname, const char *member_pattern, size_t size)
 {
   struct ar_glob_state state;
   struct nameseq *n;
-  const char **names;
+  char **names;
   unsigned int i;
 #ifdef VMS
   char *vms_member_pattern;
@@ -312,7 +312,7 @@ ar_glob (const char *arname, const char *member_pattern, size_t size)
     return 0;
 
   /* Now put the names into a vector for sorting.  */
-  names = alloca (state.n * sizeof (const char *));
+  names = (char **) alloca (state.n * sizeof (char *));
   i = 0;
   for (n = state.chain; n != 0; n = n->next)
     names[i++] = n->name;

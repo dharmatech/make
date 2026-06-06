@@ -562,7 +562,20 @@ void out_of_memory (void) NORETURN;
 #define ONS(_t,_a,_f,_n,_s)   _t((_a), INTSTR_LENGTH + strlen (_s), \
                                  (_f), (_n), (_s))
 
-enum variable_origin;
+#ifndef VARIABLE_ORIGIN_ENUM_DEFINED
+#define VARIABLE_ORIGIN_ENUM_DEFINED
+enum variable_origin
+  {
+    o_default,
+    o_env,
+    o_file,
+    o_env_override,
+    o_command,
+    o_override,
+    o_automatic,
+    o_invalid
+  };
+#endif
 struct variable;
 
 void reset_makeflags (enum variable_origin origin);

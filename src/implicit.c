@@ -889,7 +889,7 @@ pattern_search (struct file *file, int archive,
                             d->name));
 
                       if (int_file == 0)
-                        int_file = alloca (sizeof (struct file));
+                        int_file = (struct file *) alloca (sizeof (struct file));
                       memset (int_file, '\0', sizeof (struct file));
                       int_file->name = d->name;
 
