@@ -131,12 +131,12 @@ convert ()
 
 # Get source files provided from gnulib and convert to object files
 LIBOBJS=
-for lo in $( (get_mk_var lib/Makefile libgnu_a_OBJECTS; get_mk_var lib/Makefile libgnu_a_LIBADD) | sed "s=\$[\(\{]OBJEXT[\)\}]=$OBJEXT=g"); do
+for lo in $( (get_mk_var lib/Makefile libgnu_a_OBJECTS; get_mk_var lib/Makefile libgnu_a_LIBADD) | sed -e "s=\$[\(\{]OBJEXT[\)\}]=$OBJEXT=g" -e "s=\${LIBOBJDIR}==g" -e "s=\$(LIBOBJDIR)==g"); do
   LIBOBJS="${LIBOBJS:+$LIBOBJS }lib/$lo"
 done
 
 # Get object files from the Makefile
-OBJS=$(get_mk_var Makefile make_OBJECTS | sed "s=\$[\(\{]OBJEXT[\)\}]=$OBJEXT=g")
+OBJS=$(get_mk_var Makefile make_OBJECTS | sed -e "s=\$[\(\{]OBJEXT[\)\}]=$OBJEXT=g" -e "s=\${LIBOBJDIR}==g" -e "s=\$(LIBOBJDIR)==g")
 
 while test -n "$1"; do
     case $1 in
