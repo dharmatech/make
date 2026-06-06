@@ -17,27 +17,15 @@ GTAGS
 *.rej
 
 # Configure artifacts
-/lib/
-/m4/
-ABOUT-NLS
-INSTALL
 Makefile
-Makefile.in
-Basic.mk
-aclocal.m4
 autom4te.cache/
-build-aux/
 config.cache
 config.h
-config.h.in
 config.log
 config.status
-configure
 /mk/Posix.mk
-stamp-*
 .dirstamp
 gnulib
-*.sed
 
 # Build artifacts
 .deps/
@@ -67,8 +55,6 @@ test-suite.log
 # Distribution artifacts
 .dep_segment
 .check-git-HEAD
-ChangeLog
-README
 build.cfg
 mkconfig.h
 make-[0-9]*/
@@ -80,10 +66,18 @@ checkcfg.*.log
 # Plan 9 port backup files
 *.before-*
 
-# Release tarball/generated files not tracked by git
-/doc/fdl.texi
-/doc/make-stds.texi
-/doc/make.info*
-/doc/version.texi
-/po/
 /tests/config-flags.pm
+
+# Plan 9 local test outputs
+/logs/
+/build-plan9-*/
+/smoke.mk
+/lib/alloca.h
+/lib/alloca.h_
+/lib/fnmatch.h
+/lib/fnmatch.h_
+/lib/glob.h
+/lib/glob.h_
+/po/Makefile.in
+/po/POTFILES
+/src/stamp-h1
