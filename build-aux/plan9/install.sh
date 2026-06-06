@@ -13,7 +13,7 @@ done
 
 for f in config.status Makefile build.cfg tests/config-flags.pm \
          lib/Makefile doc/Makefile po/Makefile.in po/Makefile \
-         src/config.h src/stamp-h1; do
+         src/stamp-h1; do
   test -f "$f" && touch "$f"
 done
 
